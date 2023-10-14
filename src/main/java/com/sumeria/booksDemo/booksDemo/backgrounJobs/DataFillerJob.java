@@ -34,8 +34,8 @@ public class DataFillerJob {
         repository.createOrUpdateBook(new Book("My_Lovely_Book3", "Talal Mahmoud", 11));
     }
 
-    @Scheduled(cron = "*/1 * * * * *")
-    public void logEverySecond() {
-        log.info("Logging every second");
-    }
+//    @Scheduled(cron = "*/1 * * * * *")
+//    public void logEverySecond() {
+//        log.info("Logging every second");
+//    }
 }

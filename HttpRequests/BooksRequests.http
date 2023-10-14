@@ -1,10 +1,12 @@
 ### List all books
 
 GET http://localhost:8080/api/books
+Authorization: Basic user password
 
 ### Get book by title
 
-GET http://localhost:8080/api/books/book_222
+GET http://localhost:8080/api/books/book_2
+Authorization: Basic manager password
 
 ### Create book
 POST http://localhost:8080/api/books
@@ -50,3 +52,11 @@ Content-Type: application/json
 //DELETE http://localhost:8080/api/books/My_Lovely_Book
 //DELETE http://localhost:8080/api/books/book_2
 DELETE http://localhost:8080/api/books/Look_Away
+
+
+
+
+### Send SMS
+
+POST http://localhost:8080/api/sms
+

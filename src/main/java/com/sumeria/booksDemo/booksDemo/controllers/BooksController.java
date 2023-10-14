@@ -8,6 +8,7 @@ import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.server.ResponseStatusException;
@@ -23,6 +24,7 @@ public class BooksController {
     private final BooksService booksService;
 
     @GetMapping()
+    @PreAuthorize("hasRole('USER')")
     public ResponseEntity<List<Book>> getAllBooks(){
         return ResponseEntity
                 .status(HttpStatus.OK)
@@ -31,6 +33,7 @@ public class BooksController {
     }
 
     @GetMapping("/{title}")
+    @PreAuthorize("hasRole('MANAGER')")
     public ResponseEntity<Book> getBookByTitle(@PathVariable String title) {
         Book result = booksService.getBookByTitle(title);
         if(result == null) {

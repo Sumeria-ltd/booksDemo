@@ -5,3 +5,8 @@ server:
 booksDemo:
   titleToAuthorMapperServiceUrl: https://dummyjson.com/
   enableAutoAuthorMapping: true
+
+twillio:
+  accountSid: abc
+  authToken: def
+
